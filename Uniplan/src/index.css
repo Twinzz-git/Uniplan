@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@layer base {
+  :root {
+    --background: 198 75% 9%;
+    --foreground: 0 0% 95%;
+
+    --card: 198 58% 27%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 198 65% 15%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 198 30% 39%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 198 58% 27%;
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 198 40% 18%;
+    --muted-foreground: 198 15% 65%;
+
+    --accent: 198 30% 39%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 198 30% 25%;
+    --input: 198 30% 25%;
+    --ring: 198 30% 50%;
+
+    --radius: 0.75rem;
+
+    --priority-high: 0 84% 60%;
+    --priority-medium: 45 93% 58%;
+    --priority-low: 210 80% 55%;
+
+    --status-pending: 198 30% 39%;
+    --status-progress: 45 93% 58%;
+    --status-completed: 142 71% 45%;
+
+    --chat-user: 198 58% 27%;
+    --chat-ai: 198 40% 18%;
+
+    --sidebar-background: 198 75% 9%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 198 30% 39%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 198 58% 27%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 198 30% 25%;
+    --sidebar-ring: 198 30% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: hsl(198 75% 9%);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: hsl(198 30% 39%);
+    border-radius: 3px;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-sm border border-border/50 rounded-xl;
+  }
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/10;
+  }
+}
